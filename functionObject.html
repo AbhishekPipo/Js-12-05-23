@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>js function objects</h1>
+    <script>
+      /**
+       *
+       * @function in js value
+       * @every value in js has a type? then what type is function?
+       * @function are objescts
+       *
+       **/
+
+      //“contextual name”.
+      //“contextual name”.
+      //“contextual name”.
+      function sayHi() {
+        alert("Hi");
+      }
+
+      alert(sayHi.name); // sayHi
+
+      //function expression -stil assigns a name
+      let sayHi = function () {
+        alert("Hi");
+      };
+
+      alert(sayHi.name); // sayHi (there's a name!)
+
+      //
+      function f(sayHi = function () {}) {
+        alert(sayHi.name); // sayHi (works!)
+      }
+
+      f();
+
+      ///
+      let user = {
+        sayHi() {
+          // ...
+        },
+
+        sayBye: function () {
+          // ...
+        },
+      };
+
+      alert(user.sayHi.name); // sayHi
+      alert(user.sayBye.name); // sayBye
+
+      //function inside array
+      // function created inside array
+      let arr = [function () {}];
+
+      alert(arr[0].name); // <empty string>
+      // the engine has no way to set up the right name, so there is none
+
+      //function length
+      function f1(a) {}
+      function f2(a, b) {}
+      function many(a, b, ...more) {}
+
+      alert(f1.length); // 1
+      alert(f2.length); // 2
+      alert(many.length); // 2
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>js closure</h1>
+    <script>
+      // @closures
+      var name = "abhi";
+      function outer() {
+        var name = "pax"; // inner function still strores
+        //  this value this is know as closure
+
+        function inner() {
+          document.write(name); //first it searches for local scope
+          //then goes to its lexical scope i,e its outer function
+          //then goes to global scope
+        }
+        return inner;
+      }
+
+      let outerofouter = outer();
+      outerofouter();
+      //   document.write(name);
+    </script>
+  </body>
+</html>

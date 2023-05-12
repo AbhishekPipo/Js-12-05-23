@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>js global object</h1>
+    <script>
+      /**
+       * @the global object provides var and functions which are available any where
+       * @in browser it is named as window
+       **/
+      // make current user information global, to let all scripts access it
+      window.currentUser = {
+        name: "John",
+      };
+
+      // somewhere else in code
+      alert(currentUser.name); // John
+
+      // or, if we have a local variable with the name "currentUser"
+      // get it from window explicitly (safe!)
+      alert(window.currentUser.name); // John
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>js spread operator</h1>
+    <script>
+      /** @spread operator
+       * */
+      //   let arr = [1, 2, 3, 4];
+      //   let fun = (name, ...args) => {
+      //     let sum = 0;
+      //     for (let i in args) {
+      //       sum += args[i];
+      //     }
+      //     document.write(`${name}'s sum is: ${sum}`);
+      //   };
+
+      //   fun("abhi", ...arr);
+
+      /**
+       *@spread operator
+       *
+       */
+      var arr1 = [1, 2, 3, 4, 5, 6];
+      //   document.write([...arr1]);
+
+      /** @array without clone using spread operator
+       */
+
+      var arr2 = [...arr1]; //no clone if i remove [] it will be cloned
+      arr1.push(7);
+      document.write(arr1 + "<br>");
+      document.write(arr2);
+
+      /** @concat using spread op
+       */
+      var arr3 = [4, ...arr1, ...arr2, 10];
+      document.write("<br>" + arr3);
+
+      /**
+       * @object concat using spread op
+       *
+       * */
+      let obj1 = {
+        name: "abhi",
+      };
+      let obj2 = {
+        age: 23,
+      };
+
+      let obj3 = { ...obj1, ...obj2 };
+      console.log(obj3);
+
+      
+    </script>
+  </body>
+</html>
